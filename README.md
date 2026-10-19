@@ -24,6 +24,7 @@ Use the same date in the filename and front matter. Posts with a future date mig
 
 - Site title and description: `_config.yml`
 - Home page and post list: `index.html`
+- About page: `about.html`
 - Header and footer: `_layouts/default.html`
 - Article layout: `_layouts/post.html`
 - Styles: `assets/style.css`
