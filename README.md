@@ -1,47 +1,40 @@
-# Notatki techniczne
+# Engineering blog
 
-Prosty blog po polsku oparty na Jekyllu. GitHub Pages buduje stronę automatycznie z plików Markdown.
+A minimal Jekyll blog published at [0xondre.github.io](https://0xondre.github.io/). GitHub Pages builds the site from Markdown files on the `main` branch.
 
-## Publikacja na GitHub Pages
+## Publish a post
 
-1. Utwórz publiczne repozytorium `0xondre.github.io` na GitHubie.
-2. Skopiuj zawartość tego folderu do głównego katalogu repozytorium i wypchnij ją na gałąź `main`.
-3. W **Settings → Pages → Build and deployment** wybierz **Deploy from a branch**, gałąź `main` i folder **/(root)**.
-4. Konfiguracja `_config.yml` jest już przygotowana dla adresu `https://0xondre.github.io`.
-
-## Dodawanie wpisów
-
-Dodaj plik `_posts/RRRR-MM-DD-tytul-wpisu.md`:
+Add a file named `_posts/YYYY-MM-DD-post-title.md`:
 
 ```markdown
 ---
-title: "Tytuł wpisu"
-description: "Jedno zdanie o treści wpisu."
+title: "Post title"
+description: "A short summary for search results and the article page."
 date: 2026-10-19 10:00:00 +0200
-tags: [Temat, Narzędzia]
-read_time: 4
+tags: [Python, Performance]
+read_time: 5
 ---
 
-Treść wpisu w Markdown.
+Write the article in Markdown here.
 ```
 
-Data w nazwie pliku i polu `date` powinna być taka sama. GitHub Pages może ukryć wpisy z datą w przyszłości. Przykładowy artykuł znajduje się w `_posts/`; możesz go usunąć lub zastąpić własnym.
+Use the same date in the filename and front matter. Posts with a future date might not appear on GitHub Pages. After committing and pushing to `main`, the newest posts appear automatically on the home page. The HTTP caching article is an example and can be replaced with your own writing.
 
-## Edycja wyglądu i treści
+## Change the site
 
-- Nazwa bloga, opis, adres: `_config.yml`.
-- Strona główna: `index.html`.
-- O blogu: `o-blogu.html`.
-- Kolory, typografia i układ: `assets/style.css`.
-- Szablon artykułu: `_layouts/post.html`.
+- Site title and description: `_config.yml`
+- Home page and post list: `index.html`
+- Header and footer: `_layouts/default.html`
+- Article layout: `_layouts/post.html`
+- Styles: `assets/style.css`
 
-## Podgląd lokalny
+## Local preview
 
-Jeśli masz Ruby i Bundler, uruchom:
+With Ruby and Bundler installed, run:
 
 ```sh
 bundle install
 bundle exec jekyll serve
 ```
 
-Otwórz adres podany przez Jekylla, zwykle `http://127.0.0.1:4000`. Przy `baseurl` ustawionym dla repozytorium projektu dodaj tę ścieżkę do adresu.
+Then open the local URL printed by Jekyll, usually `http://127.0.0.1:4000`.
