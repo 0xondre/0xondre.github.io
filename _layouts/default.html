@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'pl' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f2ea">
+    <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+    <meta name="description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — strona główna">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>{{ site.title }}</span>
+        </a>
+        <nav class="site-nav" aria-label="Menu główne">
+          <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Start</a>
+          <a href="{{ '/blog/' | relative_url }}" {% if page.url == '/blog/' or page.layout == 'post' %}aria-current="page"{% endif %}>Wpisy</a>
+          <a href="{{ '/o-blogu/' | relative_url }}" {% if page.url == '/o-blogu/' %}aria-current="page"{% endif %}>O blogu</a>
+        </nav>
+      </header>
+
+      <main id="main-content">{{ content }}</main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>{{ site.title }}</strong>
+          <p>Notatki z praktyki. Konkrety, które warto zachować.</p>
+        </div>
+        <div class="footer-links">
+          <a href="{{ '/blog/' | relative_url }}">Wszystkie wpisy</a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS <span aria-hidden="true">↗</span></a>
+        </div>
+        <span class="footer-copy">© {{ 'now' | date: '%Y' }}</span>
+      </footer>
+    </div>
+  </body>
+</html>

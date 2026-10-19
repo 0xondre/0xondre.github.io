@@ -1,0 +1,19 @@
+title: Notatki techniczne
+description: Praktyczne teksty o tworzeniu oprogramowania, architekturze i narzędziach.
+lang: pl
+timezone: Europe/Warsaw
+url: "https://0xondre.github.io"
+baseurl: ""
+permalink: /blog/:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
